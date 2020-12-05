@@ -8,10 +8,10 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define default_layer 0
-#define fn_layer   1
-#define game_layer   2
-#define mac_layer   3
+#define DEFAULT 0
+#define FUNCTION   1
+#define GAME   2
+#define MAC   3
 
 / {
 
@@ -24,7 +24,7 @@
 &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T                      &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BKSP
 &kp ESC   &kp A     &kp S     &kp D     &kp F     &kp G                      &kp H     &kp J     &kp K     &kp L     &kp SCLN  &kp QUOT
 &kp LSFT  &kp Z     &kp X     &kp C     &kp V     &kp B  &kp LBKT &RBKT    &kp N     &kp M     &kp CMMA  &kp DOT   &kp FSLH  &kp RSFT
-                    &tog mac_layer  &kp LCTL  &kp LGUI  &kp LALT  &kp SPC    &lt fn_layer RET    &kp LC(C)     &kp LC(X)  &kp LC(V)  &tog game_layer
+                    &tog MAC  &kp LCTL  &kp LGUI  &kp LALT  &kp SPC    &lt FUNCTION RET    &kp LC(C)     &kp LC(X)  &kp LC(V)  &tog GAME
             >;
             sensor-bindings = <&inc_dec_kp LC(RIGHT) LC(LEFT) &inc_dec_kp PGUP PGDN>;
         };
@@ -35,7 +35,7 @@
 &trans     &kp INS      &kp PRSC     &kp GUI      &trans       &trans        &kp PGUP &trans    &kp UARW &trans  &trans &kp  DEL
 &trans     &kp LALT     &kp LCTL     &kp LSFT     &trans       &kp CLCK      &kp PGDN &kp LARW  &kp DARW &kp RARW &trans &trans
 &trans     &kp UNDO     &kp CUT      &kp COPY     &kp PSTE     &trans  &trans   &trans  &kp C_PREV   &kp C_PP  &kp C_NEXT   &trans   &trans    &trans
-                    &tog mac_layer  &kp LCTL  &kp LGUI  &kp LALT  &kp SPC    &lt fn_layer RET    &kp LC(C)     &kp LC(X)  &kp LC(V)  &tog game_layer
+                    &tog MAC  &kp LCTL  &kp LGUI  &kp LALT  &kp SPC    &lt FUNCTION RET    &kp LC(C)     &kp LC(X)  &kp LC(V)  &tog GAME
             >;
             sensor-bindings = <&inc_dec_kp LC(LS(RIGHT)) LC(LS(LEFT)) &inc_dec_kp PGUP PGDN>;
         };
@@ -46,7 +46,7 @@
 &kp F2 &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T                      &kp Y     &kp U     &kp I     &kp O     &kp P     
 &kp F3 &kp ESC   &kp A     &kp S     &kp D     &kp F     &kp G                      &kp H     &kp J     &kp K     &kp L     &kp SCLN  
 &kp F4 &kp LSFT  &kp Z     &kp X     &kp C     &kp V     &kp B  &kp LBKT &RBKT    &kp N     &kp M     &kp CMMA  &kp DOT   &kp FSLH  
-                    &tog mac_layer  &kp LCTL  &kp LGUI  &kp LALT  &kp SPC    &lt fn_layer RET    &kp LC(C)     &kp LC(X)  &kp LC(V)  &tog game_layer
+                    &tog MAC  &kp LCTL  &kp LGUI  &kp LALT  &kp SPC    &lt FUNCTION RET    &kp LC(C)     &kp LC(X)  &kp LC(V)  &tog GAME
             >;
 
             sensor-bindings = <&inc_dec_kp LC(RIGHT) LC(LEFT) &inc_dec_kp PGUP PGDN>;
@@ -58,7 +58,7 @@
 &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T                      &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BKSP
 &kp ESC   &kp A     &kp S     &kp D     &kp F     &kp G                      &kp H     &kp J     &kp K     &kp L     &kp SCLN  &kp QUOT
 &kp LSFT  &kp Z     &kp X     &kp C     &kp V     &kp B  &kp LBKT &RBKT    &kp N     &kp M     &kp CMMA  &kp DOT   &kp FSLH  &kp RSFT
-                    &tog mac_layer  &kp LGUI  &kp LCTL  &kp LALT  &kp SPC    &lt fn_layer RET    &kp LC(C)     &kp LC(X)  &kp LC(V)  &tog game_layer
+                    &tog MAC  &kp LGUI  &kp LCTL  &kp LALT  &kp SPC    &lt FUNCTION RET    &kp LC(C)     &kp LC(X)  &kp LC(V)  &tog GAME
             >;
 
             sensor-bindings = <&inc_dec_kp LG(RIGHT) LG(LEFT) &inc_dec_kp PGUP PGDN>;
