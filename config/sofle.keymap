@@ -8,7 +8,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define default_layer 0
+#define fn_layer   1
+#define game_layer   2
+#define mac_layer   3
+
 / {
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -17,54 +23,61 @@
 // |  `    |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |       |
 // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC |
 // |  TAB  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  |       |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B   |  Open  |  |       |  N   |  M    |  ,    |  .   |   /   | SHIFT |
 //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
             bindings = <
-&kp GRAV  &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp NUM_4 &kp NUM_5                  &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0 &none
-&kp ESC   &kp Q     &kp W     &kp E     &kp R     &kp T                      &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BKSP
-&kp TAB   &kp A     &kp S     &kp D     &kp F     &kp G                      &kp H     &kp J     &kp K     &kp L     &kp SCLN  &kp QUOT
-&kp LSFT  &kp Z     &kp X     &kp C     &kp V     &kp B  &kp M_MUTE &none    &kp N     &kp M     &kp CMMA  &kp DOT   &kp FSLH  &kp RSFT
-                    &kp LGUI  &kp LALT  &kp LCTL  &mo 1  &kp RET    &kp SPC  &mo 2     &kp RCTL  &kp RALT  &kp RGUI
+&kp MINUS  &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp NUM_4 &kp NUM_5                  &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0 &kp EQUAL
+&kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T                      &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BKSP
+&kp ESC   &kp A     &kp S     &kp D     &kp F     &kp G                      &kp H     &kp J     &kp K     &kp L     &kp SCLN  &kp QUOT
+&kp LSFT  &kp Z     &kp X     &kp C     &kp V     &kp B  &kp LBKT &RBKT    &kp N     &kp M     &kp CMMA  &kp DOT   &kp FSLH  &kp RSFT
+                    &kp mac_layer  &kp LCTL  &kp LGUI  &mo LALT  &kp SPC    &lt fn_layer RET    &mo LC(C)     &kp LC(X)  &kp LC(V)  &kp game_layer
             >;
 
-            sensor-bindings = <&inc_dec_kp M_VOLU M_VOLD &inc_dec_kp PGUP PGDN>;
+            sensor-bindings = <&inc_dec_kp LC(RIGHT) LC(LEFT) &inc_dec_kp PGUP PGDN>;
         };
 
-        lower_layer {
-// TODO: Some binds are waiting for shifted keycode support.
-// ------------------------------------------------------------------------------------------------------------
-// |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
-// | `     |   1 |   2 |   3  |   4  |   5  |                   |   6  |   7   |   8   |   9  |    0  |  F12  |
-// |       |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   |   |
-// |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
-//               |     |      |      |      |        |  |       |      |       |       |      |
+        fn_layer    {
+        // used for navigations. some media too.
             bindings = <
-&trans   &kp F1    &kp F2    &kp F3    &kp F4    &kp F5                   &kp F6    &kp F7    &kp F8    &kp F9    &kp F10   &kp F11
-&kp GRAV &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp NUM_4 &kp NUM_5                &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0 &kp F12
-&trans   &kp BANG  &kp ATSN  &kp HASH  &kp CURU  &kp PRCT                 &kp CRRT  &kp AMPS  &kp KMLT  &kp LPRN  &kp RPRN  &kp PIPE
-&trans   &kp EQL   &kp MINUS &kp KPLS  &kp LCUR  &kp RCUR &trans   &trans &kp LBKT  &kp RBKT  &kp SCLN  &kp COLN  &kp BSLH  &trans
-                   &trans    &trans    &trans    &trans   &trans   &trans &trans    &trans    &trans    &trans
+&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &trans   &trans    &trans   &trans   &trans    &kp ESC
+&trans     &kp INS      &kp PRSC     &kp GUI      &trans       &trans        &kp PGUP &trans    &kp UARW &trans   &kp  &DEL
+&trans     &kp LALT     &kp LCTL     &kp LSFT     &trans       &kp CLCK      &kp PGDN &kp LARW  &kp DARW &kp RARW &trans &trans
+&trans     &kp UNDO     &kp CUT      &kp COPY     &kp PSTE     &trans  &trans   &trans  &kp C_PREV   &kp C_PP  &kp C_NEXT   &trans   &trans    &trans
+                    &kp mac_layer  &kp LCTL  &kp LGUI  &mo LALT  &kp SPC    &lt fn_layer RET    &mo LC(C)     &kp LC(X)  &kp LC(V)  &kp game_layer
             >;
 
-            sensor-bindings = <&inc_dec_kp M_VOLU M_VOLD &inc_dec_kp PGUP PGDN>;
+            sensor-bindings = <&inc_dec_kp LC(LS(RIGHT)) LC(LS(LEFT)) &inc_dec_kp PGUP PGDN>;
         };
 
-        raise_layer {
-// ------------------------------------------------------------------------------------------------------------
-// |BTCLR| BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-// |     | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
-// |     | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-// |     | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
-//              |      |       |       |      |      |  |      |      |      |       |      |
+        game_layer default_layer {
+// moves all left hand bindings over one key to get a good asdf cluster, adds fkeys to leftmost column
             bindings = <
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4             &trans   &trans    &trans   &trans   &trans    &trans
-&trans     &kp INS      &kp PRSC     &kp GUI      &trans       &trans                   &kp PGUP &trans    &kp UARW &trans   &kp NUM_0 &trans
-&trans     &kp LALT     &kp LCTL     &kp LSFT     &trans       &kp CLCK                 &kp PGDN &kp LARW  &kp DARW &kp RARW &kp DEL   &kp BKSP
-&trans     &kp UNDO     &kp CUT      &kp COPY     &kp PSTE     &trans  &trans   &trans  &trans   &trans    &trans   &trans   &trans    &trans
-                        &trans       &trans       &trans       &trans  &trans   &trans  &trans   &trans    &trans   &trans
+&kp F1 &kp MINUS  &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp NUM_4 &kp NUM_5                  &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0 
+&kp F2 &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T                      &kp Y     &kp U     &kp I     &kp O     &kp P     
+&kp F3 &kp ESC   &kp A     &kp S     &kp D     &kp F     &kp G                      &kp H     &kp J     &kp K     &kp L     &kp SCLN  
+&kp F4 &kp LSFT  &kp Z     &kp X     &kp C     &kp V     &kp B  &kp LBKT &RBKT    &kp N     &kp M     &kp CMMA  &kp DOT   &kp FSLH  
+                    &kp mac_layer  &kp LCTL  &kp LGUI  &mo LALT  &kp SPC    &lt fn_layer RET    &mo LC(C)     &kp LC(X)  &kp LC(V)  &kp default_layer
             >;
 
-            sensor-bindings = <&inc_dec_kp M_VOLU M_VOLD &inc_dec_kp PGUP PGDN>;
+            sensor-bindings = <&inc_dec_kp LC(RIGHT) LC(LEFT) &inc_dec_kp PGUP PGDN>;
+        };
+
+        mac_layer {
+// ------------------------------------------------------------------------------------------------------------
+// |  `    |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |       |
+// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC |
+// |  TAB  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B   |  Open  |  |       |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+//               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
+            bindings = <
+&kp MINUS  &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp NUM_4 &kp NUM_5                  &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0 &kp EQUAL
+&kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T                      &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BKSP
+&kp ESC   &kp A     &kp S     &kp D     &kp F     &kp G                      &kp H     &kp J     &kp K     &kp L     &kp SCLN  &kp QUOT
+&kp LSFT  &kp Z     &kp X     &kp C     &kp V     &kp B  &kp LBKT &RBKT    &kp N     &kp M     &kp CMMA  &kp DOT   &kp FSLH  &kp RSFT
+                    &kp default_layer  &kp LGUI  &kp LCTL  &mo LALT  &kp SPC    &lt fn_layer RET    &mo LC(C)     &kp LC(X)  &kp LC(V)  &kp game_layer
+            >;
+
+            sensor-bindings = <&inc_dec_kp LG(RIGHT) LG(LEFT) &inc_dec_kp PGUP PGDN>;
         };
     };
 };
