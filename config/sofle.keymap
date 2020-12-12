@@ -35,7 +35,7 @@
 &kp TAB     &bt BT_PRV      &bt BT_NXT     &kp GUI      &trans       &kp LPAR        &kp RPAR &trans    &kp UARW &bt BT_PRV  &bt BT_NXT &kp  DEL
 &kp ESC     &kp LALT     &kp LCTL     &kp LSFT     &trans       &kp LBRC      &kp RBRC &kp LARW  &kp DARW &kp RARW &trans &kp GRAVE
 &kp LSFT     &kp UNDO     &kp CUT      &kp COPY     &kp PSTE     &kp LBKT  &trans &trans &kp RBKT &kp C_PREV   &kp C_PP  &kp C_NEXT  &kp BSLH &kp RSFT
-                    &bt BT_CLR  &kp LCTL  &kp LGUI  &kp LALT  &kp SPC    &lt FUNCTION RET    &kp LC(C)     &kp LC(X)  &kp LC(V)  &bt BT_CLEAR
+                    &bt BT_CLR  &kp LCTL  &kp LGUI  &kp LALT  &kp SPC    &lt FUNCTION RET    &kp LC(C)     &kp LC(X)  &kp LC(V)  &bt BT_CLR
             >;
             sensor-bindings = <&inc_dec_kp LC(LS(RIGHT)) LC(LS(LEFT)) &inc_dec_kp PGUP PGDN>;
         };
