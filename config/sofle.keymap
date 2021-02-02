@@ -24,9 +24,9 @@
 &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T                      &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
 &kp ESC   &kp A     &kp S     &kp D     &kp F     &kp G                      &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z     &kp X     &kp C     &kp V     &kp B  &kp LBKT &kp RBKT    &kp N     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-                    &tog MAC  &kp LCTRL  &kp LGUI  &kp LALT  &kp SPACE    &lt FUNCTION RET    &kp LC(C)     &kp LC(X)  &kp LC(V)  &tog GAME
+                    &tog MAC  &kp LCTRL  &kp LGUI  &kp LALT  &kp SPACE    &lt FUNCTION RET    &kp LC(S)     &kp LC(C)  &kp LC(V)  &tog GAME
             >;
-            sensor-bindings = <&inc_dec_kp LC(RIGHT) LC(LEFT) &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp PG_UP PG_DN>;
         };
 
         fn_layer    {
@@ -35,7 +35,7 @@
 &kp TAB     &bt BT_PRV      &bt BT_NXT     &kp K_CMENU      &trans       &kp LPAR        &kp RPAR &trans    &kp UP &bt BT_PRV  &bt BT_NXT &kp  DEL
 &kp ESC     &kp LALT     &kp LCTRL     &kp LSHFT     &trans       &kp LBRC      &kp RBRC &kp LEFT  &kp DOWN &kp RIGHT &trans &kp GRAVE
 &kp LSHFT     &kp K_UNDO     &kp K_CUT      &kp K_COPY     &kp K_PASTE     &kp LBKT  &trans &trans &kp RBKT &kp C_PREV   &kp C_PP  &kp C_NEXT  &kp BSLH &kp RSHFT
-                    &bt BT_CLR  &kp LCTRL  &kp LGUI  &kp LALT  &kp SPACE    &lt FUNCTION RET    &kp LC(C)     &kp LC(X)  &kp LC(V)  &bt BT_CLR
+                    &bt BT_CLR  &kp LCTRL  &kp LGUI  &kp LALT  &kp SPACE    &lt FUNCTION RET    &kp LC(S)     &kp LC(C)  &kp LC(V)  &bt BT_CLR
             >;
             sensor-bindings = <&inc_dec_kp LC(LS(RIGHT)) LC(LS(LEFT)) &inc_dec_kp PG_UP PG_DN>;
         };
@@ -46,7 +46,7 @@
 &kp F2 &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T                      &kp Y     &kp U     &kp I     &kp O     &kp P     
 &kp F3 &kp ESC   &kp A     &kp S     &kp D     &kp F     &kp G                      &kp H     &kp J     &kp K     &kp L     &kp SEMI  
 &kp F4 &kp LSHFT  &kp Z     &kp X     &kp C     &kp V     &kp B  &kp LBKT &kp RBKT    &kp N     &kp M     &kp COMMA  &kp DOT   &kp FSLH  
-                    &tog MAC  &kp LCTRL  &kp LGUI  &kp LALT  &kp SPACE    &lt FUNCTION RET    &kp LC(C)     &kp LC(X)  &kp LC(V)  &tog GAME
+                    &tog MAC  &kp LCTRL  &kp LGUI  &kp LALT  &kp SPACE    &lt FUNCTION RET    &kp LC(S)     &kp LC(C)  &kp LC(V)  &tog GAME
             >;
 
             sensor-bindings = <&inc_dec_kp LC(RIGHT) LC(LEFT) &inc_dec_kp PG_UP PG_DN>;
@@ -58,7 +58,7 @@
 &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T                      &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
 &kp ESC   &kp A     &kp S     &kp D     &kp F     &kp G                      &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z     &kp X     &kp C     &kp V     &kp B  &kp LBKT &kp RBKT    &kp N     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-                    &tog MAC  &kp LGUI  &kp LCTRL  &kp LALT  &kp SPACE    &lt FUNCTION RET    &kp LC(C)     &kp LC(X)  &kp LC(V)  &tog GAME
+                    &tog MAC  &kp LGUI  &kp LCTRL  &kp LALT  &kp SPACE    &lt FUNCTION RET    &kp LC(S)     &kp LC(C)  &kp LC(V)  &tog GAME
             >;
 
             sensor-bindings = <&inc_dec_kp LG(RIGHT) LG(LEFT) &inc_dec_kp PG_UP PG_DN>;
