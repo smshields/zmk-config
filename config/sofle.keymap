@@ -26,7 +26,7 @@
 &kp LSHFT  &kp Z     &kp X     &kp C     &kp V     &kp B  &kp LBKT &kp RBKT    &kp N     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
                     &tog MAC  &kp LCTRL  &kp LGUI  &kp LALT  &kp SPACE    &lt FUNCTION RET    &kp LC(S)     &kp LC(C)  &kp LC(V)  &tog GAME
             >;
-            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp PG_UP PG_DN>;
         };
 
         fn_layer    {
