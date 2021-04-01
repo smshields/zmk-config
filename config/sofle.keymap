@@ -37,7 +37,7 @@
 &kp LSHFT     &kp K_UNDO     &kp K_CUT      &kp K_COPY     &kp K_PASTE     &kp LBKT  &kp C_PP &kp LC(S)  &kp RBKT &kp C_PREV   &kp C_PP  &kp C_NEXT  &kp BSLH &kp RSHFT
                     &bt BT_CLR  &kp LCTRL  &kp LGUI  &kp LALT  &kp SPACE    &lt FUNCTION RET    &kp LC(S)     &kp LC(C)  &kp LC(V)  &bt BT_CLR
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DOWN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         game_layer {
