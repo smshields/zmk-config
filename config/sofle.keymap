@@ -12,7 +12,7 @@
 #define DEFAULT 0
 #define FUNCTION   1
 #define GAME   2
-#define MAC   
+#define MAC   3
 
 &spi1 {
   compatible = "nordic,nrf-spim";
