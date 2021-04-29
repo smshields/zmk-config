@@ -99,7 +99,7 @@
         &bt BT_CLR                          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2                  &bt BT_SEL 3    &bt BT_SEL 4                        &kp N6  &kp N7      &kp N8        &kp N9       &kp N0       &kp EQUAL
         &rgb_ug RGB_TOG                     &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI               &rgb_ug RGB_SPI &rgb_ug RGB_EFF                     &trans  &trans      &trans        &trans       &trans       &kp DEL
         &rgb_ug RGB_COLOR_HSB(255, 179, 25) &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD               &rgb_ug RGB_SPD &rgb_ug RGB_EFR                     &trans  &kp C_PREV  &kp C_PP      &kp C_NEXT   &trans       &kp SQT
-        &kp LSHFT                           &out OUT_USB    &out OUT_BLE    &RGB_COLOR_HSB(102, 230, 255) &bootloader     &reset          &kp C_PP &kp C_NEXT &reset  &bootloader &trans        &out OUT_BLE &out OUT_USB &kp RSHFT
+        &kp LSHFT                           &out OUT_USB    &out OUT_BLE    &rgb_ug RGB_COLOR_HSB(102, 230, 255) &bootloader     &reset          &kp C_PP &kp C_NEXT &reset  &bootloader &trans        &out OUT_BLE &out OUT_USB &kp RSHFT
         &kp LCTRL                           &kp LGUI        &kp LALT        &lt CODE LBRC                 &lt NUMP SPACE                                      &lt NAVI RET        &lt SYST RBRC &kp LC(S)    &kp LC(Z)    &tog GAME
       >;
 
