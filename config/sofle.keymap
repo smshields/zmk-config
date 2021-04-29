@@ -141,9 +141,9 @@
         &inc_dec_kp LS(UP) LS(DOWN)
       >;
     };
+};
 
 / {
   chosen {
     zmk,underglow = &led_strip;
-  };
 };
